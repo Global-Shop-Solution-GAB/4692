@@ -1,0 +1,1142 @@
+Program.Sub.ScreenSU.Start
+Gui.F_WO..Create
+Gui.F_WO..Caption("Open Job Review")
+Gui.F_WO..Size(15375,11490)
+Gui.F_WO..MinX(15375)
+Gui.F_WO..MinY(11490)
+Gui.F_WO..Position(0,0)
+Gui.F_WO..BackColor(-2147483633)
+Gui.F_WO..MousePointer(0)
+Gui.F_WO..Event(UnLoad,Form_UnLoad)
+Gui.F_WO..Event(Resize,F_WO_Resize)
+Gui.F_WO.GsGCWO.Create(GsGridControl)
+Gui.F_WO.GsGCWO.Size(15000,9030)
+Gui.F_WO.GsGCWO.Position(90,1020)
+Gui.F_WO.GsGCWO.Event(RowCellClick,GsGCWO_RowCellClick)
+Gui.F_WO.GsGCWO.Event(CellValueChanged,GsGCWO_CellValueChanged)
+Gui.F_WO.GsGCWO.Event(ColumnFilterChanged,GsGCWO_ColumnFilterChanged)
+Gui.F_WO.frameFilters.Create(Frame)
+Gui.F_WO.frameFilters.Size(7755,915)
+Gui.F_WO.frameFilters.Position(90,10095)
+Gui.F_WO.frameFilters.Caption("Filters")
+Gui.F_WO.frameFilters.Visible(False)
+Gui.F_WO.frameFilters.Enabled(False)
+Gui.F_WO.cmdFilter.Create(Button)
+Gui.F_WO.cmdFilter.Size(855,675)
+Gui.F_WO.cmdFilter.Position(6870,180)
+Gui.F_WO.cmdFilter.Parent("frameFilters")
+Gui.F_WO.cmdFilter.Caption("Filter")
+Gui.F_WO.cmdFilter.Event(Click,cmdFilter_Click)
+Gui.F_WO.chkCust.Create(CheckBox)
+Gui.F_WO.chkCust.Size(1110,255)
+Gui.F_WO.chkCust.Position(195,270)
+Gui.F_WO.chkCust.Parent("frameFilters")
+Gui.F_WO.chkCust.Caption("Customer:")
+Gui.F_WO.txtCust.Create(TextBox,"",True,2400,300,0,195,540,True,0,"Arial",8,-2147483643,1)
+Gui.F_WO.txtCust.Parent("frameFilters")
+Gui.F_WO.cmdCust.Create(Button)
+Gui.F_WO.cmdCust.Size(345,330)
+Gui.F_WO.cmdCust.Position(2640,525)
+Gui.F_WO.cmdCust.Parent("frameFilters")
+Gui.F_WO.cmdCust.Caption("^")
+Gui.F_WO.cmdCust.Event(Click,cmdCust_Click)
+Gui.F_WO.txtLoc.Create(TextBox,"",True,495,300,0,3090,540,True,0,"Arial",8,-2147483643,1)
+Gui.F_WO.txtLoc.Parent("frameFilters")
+Gui.F_WO.txtPL.Create(TextBox,"",True,495,300,0,4065,540,True,0,"Arial",8,-2147483643,1)
+Gui.F_WO.txtPL.Parent("frameFilters")
+Gui.F_WO.txtPL.ForeColor(0)
+Gui.F_WO.cmdLoc.Create(Button)
+Gui.F_WO.cmdLoc.Size(345,330)
+Gui.F_WO.cmdLoc.Position(3615,525)
+Gui.F_WO.cmdLoc.Parent("frameFilters")
+Gui.F_WO.cmdLoc.Caption("^")
+Gui.F_WO.cmdLoc.Event(Click,cmdLoc_Click)
+Gui.F_WO.cmdPL.Create(Button)
+Gui.F_WO.cmdPL.Size(345,330)
+Gui.F_WO.cmdPL.Position(4605,525)
+Gui.F_WO.cmdPL.Parent("frameFilters")
+Gui.F_WO.cmdPL.Caption("^")
+Gui.F_WO.cmdPL.Event(Click,cmdPL_Click)
+Gui.F_WO.chkLoc.Create(CheckBox)
+Gui.F_WO.chkLoc.Size(690,270)
+Gui.F_WO.chkLoc.Position(3090,270)
+Gui.F_WO.chkLoc.Parent("frameFilters")
+Gui.F_WO.chkLoc.Caption("Loc:")
+Gui.F_WO.chkPL.Create(CheckBox)
+Gui.F_WO.chkPL.Size(615,270)
+Gui.F_WO.chkPL.Position(4065,270)
+Gui.F_WO.chkPL.Parent("frameFilters")
+Gui.F_WO.chkPL.Caption("PL:")
+Gui.F_WO.chkPL.BackColor(15790320)
+Gui.F_WO.chkPL.ForeColor(0)
+Gui.F_WO.txtWC.Create(TextBox,"",True,1380,300,0,5055,540,True,0,"Arial",8,-2147483643,1)
+Gui.F_WO.txtWC.Parent("frameFilters")
+Gui.F_WO.cmdWC.Create(Button)
+Gui.F_WO.cmdWC.Size(345,330)
+Gui.F_WO.cmdWC.Position(6480,525)
+Gui.F_WO.cmdWC.Parent("frameFilters")
+Gui.F_WO.cmdWC.Caption("^")
+Gui.F_WO.cmdWC.Event(Click,cmdWC_Click)
+Gui.F_WO.chkWC.Create(CheckBox)
+Gui.F_WO.chkWC.Size(1245,255)
+Gui.F_WO.chkWC.Position(5055,270)
+Gui.F_WO.chkWC.Parent("frameFilters")
+Gui.F_WO.chkWC.Caption("Workcenter:")
+Gui.F_WO.frameTot.Create(Frame)
+Gui.F_WO.frameTot.Size(3915,855)
+Gui.F_WO.frameTot.Position(11175,10050)
+Gui.F_WO.lblRemHrs.Create(Label,"Tot Rem Hrs",True,1005,255,0,2760,195,True,0,"Arial",8,-2147483633,0)
+Gui.F_WO.lblRemHrs.Parent("frameTot")
+Gui.F_WO.lblActHrs.Create(Label,"Tot Act Hrs",True,960,255,0,1515,195,True,0,"Arial",8,-2147483633,0)
+Gui.F_WO.lblActHrs.Parent("frameTot")
+Gui.F_WO.lblEstHrs.Create(Label,"Tot Est Hrs",True,960,255,0,240,195,True,0,"Arial",8,-2147483633,0)
+Gui.F_WO.lblEstHrs.Parent("frameTot")
+Gui.F_WO.txtRemHrs.Create(TextBox,"",True,1200,300,0,2670,420,True,2,"Arial",8,-2147483643,1)
+Gui.F_WO.txtRemHrs.Parent("frameTot")
+Gui.F_WO.txtRemHrs.Locked(True)
+Gui.F_WO.txtActHrs.Create(TextBox,"",True,1200,300,0,1395,420,True,2,"Arial",8,-2147483643,1)
+Gui.F_WO.txtActHrs.Parent("frameTot")
+Gui.F_WO.txtActHrs.Locked(True)
+Gui.F_WO.txtEstHrs.Create(TextBox,"",True,1200,300,0,120,420,True,2,"Arial",8,-2147483643,1)
+Gui.F_WO.txtEstHrs.Parent("frameTot")
+Gui.F_WO.txtEstHrs.Locked(True)
+Gui.F_WO.progressBarStatus.Create(ProgressBar)
+Gui.F_WO.progressBarStatus.Size(4110,255)
+Gui.F_WO.progressBarStatus.Position(120,360)
+Gui.F_WO.progressBarStatus.Visible(False)
+Gui.F_WO.lblStatus.Create(Label,"****Change****",False,4650,255,0,120,150,True,0,"Arial",10,-2147483633,0)
+Gui.F_WO.framePermissions.Create(Frame)
+Gui.F_WO.framePermissions.Size(1965,390)
+Gui.F_WO.framePermissions.Position(13080,555)
+Gui.F_WO.optView.Create(Option)
+Gui.F_WO.optView.Size(690,195)
+Gui.F_WO.optView.Position(225,150)
+Gui.F_WO.optView.Caption("View")
+Gui.F_WO.optView.BackColor(15790320)
+Gui.F_WO.optView.ForeColor(0)
+Gui.F_WO.optView.Parent("framePermissions")
+Gui.F_WO.optEdit.Create(Option)
+Gui.F_WO.optEdit.Enabled(False)
+Gui.F_WO.optEdit.Size(690,195)
+Gui.F_WO.optEdit.Position(1050,150)
+Gui.F_WO.optEdit.Caption("Edit")
+Gui.F_WO.optEdit.Parent("framePermissions")
+Gui.F_WO.frameButtons.Create(Frame)
+Gui.F_WO.frameButtons.Size(1965,600)
+Gui.F_WO.frameButtons.Position(13080,75)
+Gui.F_WO.cmdExport.Create(Button)
+Gui.F_WO.cmdExport.Size(840,375)
+Gui.F_WO.cmdExport.Position(1020,150)
+Gui.F_WO.cmdExport.Caption("Export")
+Gui.F_WO.cmdExport.Event(Click,cmdExport_Click)
+Gui.F_WO.cmdExport.Parent("frameButtons")
+Gui.F_WO.cmdRefresh.Create(Button)
+Gui.F_WO.cmdRefresh.Size(840,375)
+Gui.F_WO.cmdRefresh.Position(90,165)
+Gui.F_WO.cmdRefresh.Caption("REFRESH")
+Gui.F_WO.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_WO.cmdRefresh.Parent("frameButtons")
+Gui.F_WO.picGSSLogo.Create(PictureBox)
+Gui.F_WO.picGSSLogo.Size(4125,960)
+Gui.F_WO.picGSSLogo.Position(5520,45)
+Gui.F_WO.picGSSLogo.Event(DblClick,picGSSLogo_DblClick)
+Gui.frmWeb..Create
+Gui.frmWeb..Caption("Global Shop Solutions - Web Sites")
+Gui.frmWeb..Size(4035,1695)
+Gui.frmWeb..MinX(0)
+Gui.frmWeb..MinY(0)
+Gui.frmWeb..Position(0,0)
+Gui.frmWeb..BackColor(-2147483633)
+Gui.frmWeb..MousePointer(0)
+Gui.frmWeb..MaxButton(False)
+Gui.frmWeb..Sizeable(False)
+Gui.frmWeb..Event(UnLoad,frmWeb_UnLoad)
+Gui.frmWeb..MinButton(False)
+Gui.frmWeb.cmdGSS.Create(Button)
+Gui.frmWeb.cmdGSS.Size(3615,375)
+Gui.frmWeb.cmdGSS.Position(120,45)
+Gui.frmWeb.cmdGSS.Caption("Global Shop Solutions")
+Gui.frmWeb.cmdGSS.Event(Click,cmdGSS_Click)
+Gui.frmWeb.cmdServ.Create(Button)
+Gui.frmWeb.cmdServ.Size(3615,375)
+Gui.frmWeb.cmdServ.Position(120,450)
+Gui.frmWeb.cmdServ.Caption("ServiceWeb")
+Gui.frmWeb.cmdServ.Event(Click,cmdServ_Click)
+Gui.frmWeb.cmdUpd.Create(Button)
+Gui.frmWeb.cmdUpd.Size(3615,375)
+Gui.frmWeb.cmdUpd.Position(120,855)
+Gui.frmWeb.cmdUpd.Caption("GSS Updates")
+Gui.frmWeb.cmdUpd.Event(Click,cmdUpd_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	V.Local.sIcon.Declare(String)
+	V.Local.bGroup.Declare(Boolean)
+	V.Local.sGssLogo.Declare	
+	
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\GAB_GSS_Logo_Green_Dash.png",V.Caller.PluginsDir,V.Local.sGssLogo)
+	Gui.frmWeb..Icon(V.Local.sIcon)
+	Gui.F_WO..Icon(V.Local.sIcon)
+	Gui.F_WO.picGSSLogo.Picture(V.Local.sGssLogo)
+	
+	Gui.F_WO.optView.Value(True)
+	Gui.F_WO.optEdit.Value(False)
+	F.Intrinsic.Control.CallSub(setanchors)
+		
+	F.Global.Security.IsInGroup(V.Caller.User,"EditWO",V.Caller.CompanyCode,V.Local.bGroup)
+	F.Intrinsic.Control.If(V.Local.bGroup,=,True)
+		Gui.F_WO.optEdit.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+	
+	Gui.F_WO..Show
+	F.Intrinsic.Control.CallSub(lockscreen)
+	F.Intrinsic.Control.CallSub(checktable)
+	F.Intrinsic.Control.CallSub(loaddtdvwos)
+	F.Intrinsic.Control.CallSub(loadgvwos)
+	F.Intrinsic.Control.CallSub(loadtotals,"Filter","JOB LIKE '%%'")
+	F.Intrinsic.Control.CallSub(enablescreen)
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Form_Unload_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+
+	F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.Label("Form_Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.end
+Function.Intrinsic.Control.EndIf	
+
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.LoadDTDVWOs.Start
+
+F.Intrinsic.Control.SetErrorHandler("LoadDtDVWos_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	
+	V.Local.iCnt.Declare(Long)
+	V.Local.iProgress.Declare(Long)
+	V.Local.sSQL.Declare(String)
+	V.Local.sRet.Declare(String)
+	V.Local.sJob.Declare(String)
+	V.Local.sSuffix.Declare(String)
+	V.Local.fEstHrs.Declare(Float)
+	V.Local.fRemHrs.Declare(Float)
+	V.Local.fPcsRem.Declare(Float)
+	V.Local.sOper.Declare(String)
+
+	F.Intrinsic.Control.If(V.DataTable.dtWOs.Exists,=,True)
+		F.Data.DataTable.Close("dtWOs")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.CreateFromSQL("dtWOs","con","SELECT CONVERT(IF(FLAG_WO_PRTD = 'Y',1,0),SQL_BIT) AS PRINTED, (AMT_MATERIAL + AMT_OVERHEAD + AMT_LABOR + OUTS + FREIGHT + OTHER) as TOTAL, VJH.JOB,VJH.SUFFIX,NAME_CUSTOMER,PART,LOCATION,PRODUCT_LINE,DESCRIPTION,DATE_DUE,NUM_HOURS AS ACT_HRS,QTY_ORDER,C.NOTES FROM V_JOB_HEADER VJH LEFT JOIN V_CUSTOMER_MASTER VCM ON VJH.CUSTOMER = VCM.CUSTOMER LEFT JOIN GAB_4169_WO_NOTES C ON VJH.JOB = C.JOB AND VJH.SUFFIX = C.SUFFIX WHERE DATE_CLOSED = '1900-1-1' ORDER BY DATE_DUE,VJH.JOB,VJH.SUFFIX;",True)
+	F.Data.DataTable.AddColumn("dtWOs","EST_HRS",Float)
+	F.Data.DataTable.AddColumn("dtWOs","REM_HRS",Float)
+	F.Data.DataTable.AddColumn("dtWOs","OPER",String)
+	F.Data.DataTable.AddColumn("dtWOs","PCS_REM",Long)
+	
+	Gui.F_WO.lblStatus.Visible(True)
+	Gui.F_WO.progressBarStatus.Visible(True)
+	Gui.F_WO.lblStatus.Caption("Loading Work Orders....")
+	Gui.F_WO.progressBarStatus.Min(0)
+	Gui.F_WO.progressBarStatus.Max(V.DataTable.dtWOs.RowCount)
+
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtWOs.RowCount--,1)
+'	F.Intrinsic.Control.For(V.Local.iCnt,0,1,1)
+		F.Intrinsic.Math.Add(V.Local.iProgress,1,V.Local.iProgress)
+		Gui.F_WO.progressBarStatus.Value(V.Local.iProgress)
+		V.Local.sJob.Set(V.DataTable.dtWOs(V.Local.iCnt).JOB!FieldVal)
+		V.Local.sSuffix.Set(V.DataTable.dtWOs(V.Local.iCnt).SUFFIX!FieldVal)
+		F.Intrinsic.String.Build("SELECT TOP 1 SEQTYPE,SEQRES,PCSREMAIN FROM APSV3_JBLINES WHERE COMPLDATE IS NULL AND JOB = '{0}' AND SFX = '{1}' ORDER BY JOB,SFX,SEQ;",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rstInfo",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstInfo.EOF,=,True)
+				V.Local.sOper.Set("WipToFG")
+				V.Local.FPcsRem.Set(0)
+			F.Intrinsic.Control.Else
+				V.Local.sOper.Set(V.ODBC.con!rstInfo.FieldValTrim!SEQRES)
+				V.Local.fPcsRem.Set(V.ODBC.con!rstInfo.FieldValFloat!PCSREMAIN)
+			F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstInfo.Close
+		
+		F.Intrinsic.String.Build("SELECT CONVERT(SUM(HOURSORIG+INITSU),SQL_NUMERIC) AS EST_HRS FROM APSV3_JBLINES WHERE SEQTYPE = '1' AND JOB = '{0}' AND SFX = '{1}' GROUP BY JOB,SFX;",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.fEstHrs)
+
+		F.Intrinsic.Control.If(V.Local.fEstHrs,=,0)
+			V.Local.fEstHrs.Set(0.0000)
+			V.Local.fRemHrs.Set(0.0000)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Sub(V.Local.fEstHrs,V.DataTable.dtWOs(V.Local.iCnt).ACT_HRS!FieldValFloat,V.Local.fRemHrs)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.SetValue("dtWOs",V.Local.iCnt,"EST_HRS",V.Local.fEstHrs,"REM_HRS",V.Local.fRemHrs,"OPER",V.Local.sOper,"PCS_REM",V.Local.fPcsRem)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Data.DataView.Create("dtWOs","dvWOs")
+	
+	
+F.Intrinsic.Control.Label("LoadDtDVWos_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.LoadDTDVWOs.End
+
+Program.Sub.LoadGVWOs.Start
+
+F.Intrinsic.Control.SetErrorHandler("LoadGVWOs_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	
+	Gui.F_WO.GsGCWO.AddGridViewFromDataView("gvWOs","dtWOs","dvWOs")
+	
+	Gui.F_WO.GsGCWO.SetGridViewProperty("gvWOs","MultiSelect",True)
+	Gui.F_WO.GsGCWO.SetGridViewProperty("gvWOs","AllowSort",True)
+	Gui.F_WO.GsGCWO.SetGridViewProperty("gvWOs","AllowFilter",True)
+	Gui.F_WO.GsGCWO.SetGridViewProperty("gvWOs","OptionsDetailShowDetailTabs",True)
+	Gui.F_WO.GsGCWO.SetGridViewProperty("gvWOs","OptionsViewShowGroupPanel",True)
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","DisplayCustomNumeric","#,###,###,##0.00")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","DisplayCustomNumeric","#,###,###,##0.00")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","DisplayCustomNumeric","#,###,###,##0.00")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","DisplayCustomNumeric","#,###,###,##0.00")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","DisplayCustomNumeric","#,###,###,##0.00")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","DisplayCustomNumeric","#,###,###,##0.00")	
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","VisibleIndex","0")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","VisibleIndex","1")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","VisibleIndex","2")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NAME_CUSTOMER","VisibleIndex","3")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","VisibleIndex","4")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","VisibleIndex","5")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","VisibleIndex","6")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DESCRIPTION","VisibleIndex","7")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","VisibleIndex","8")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","VisibleIndex","9")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","VisibleIndex","10")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","VisibleIndex","11")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","VisibleIndex","12")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","OPER","VisibleIndex","13")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","VisibleIndex","14")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","VisibleIndex","15")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","VisibleIndex","16")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","Caption","Printed ")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","Caption","Job ")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","Caption","Suffix ")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NAME_CUSTOMER","Caption","Cust. Name")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","Caption","Part ")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","Caption","Loc")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","Caption","PL")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DESCRIPTION","Caption","Description ")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","Caption","WO Due Date")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","Caption","Est. Hrs.")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","Caption","Act. Hrs.")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","Caption","Rem. Hrs.")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","Caption","Total Cost")	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","OPER","Caption","Operation")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","Caption","Order Qty.")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","Caption","Pcs. Rem.")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","Caption","Notes ")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","MinWidth","35")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","MinWidth","50")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NAME_CUSTOMER","MinWidth","175")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","MinWidth","150")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","MinWidth","35")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","MinWidth","35")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DESCRIPTION","MinWidth","200")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","MinWidth","100")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","MinWidth","75")	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","OPER","MinWidth","200")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","MinWidth","75")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","MinWidth","300")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","HeaderHAlignment","Center")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","CellHAlignment","Center")	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","CellHAlignment","Center")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","CellHAlignment","Center")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","Fixed","Left")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","Fixed","Left")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","Fixed","Left")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NAME_CUSTOMER","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DESCRIPTION","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","ReadOnly",True)	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","OPER","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","ReadOnly",True)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","ReadOnly",False)
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRINTED","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NAME_CUSTOMER","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PRODUCT_LINE","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DESCRIPTION","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","EST_HRS","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","ACT_HRS","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","REM_HRS","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","TOTAL","AllowEdit",False)	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","OPER","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","QTY_ORDER","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PCS_REM","AllowEdit",False)
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","AllowEdit",True)
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","JOB","CellForeColor","Blue")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","SUFFIX","CellForeColor","Blue")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","PART","CellForeColor","Blue")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","LOCATION","CellForeColor","Blue")
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","NOTES","CellBackColor","LightYellow")
+	
+	Gui.F_WO.GsGCWO.SetColumnProperty("gvWOs","DATE_DUE","DisplayCustomDatetime","d")
+
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtWOs.RowCount--,1)
+		Function.Intrinsic.Math.Mod(V.Local.iCnt,2,V.Local.iRet)
+		Function.Intrinsic.Control.If(V.Local.iRet,=,0)
+			Gui.F_WO.GsGCWO.SetRowAppearance("gvWOs",V.Local.iCnt,"BackColor","AliceBlue")
+		Function.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+
+	Gui.F_WO.GsGCWO.MainView("gvWOs")
+	
+F.Intrinsic.Control.Label("LoadGVWOs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.LoadGVWOs.End
+
+Program.Sub.GsGCWO_RowCellClick.Start
+F.Intrinsic.Control.SetErrorHandler("GsGCWO_RowCellClick_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	V.Local.sParams.Declare(String)
+	V.Local.sJob.Declare(String)
+	V.Local.sSuffix.Declare(String)
+	V.Local.sPart.Declare(String)
+	V.Local.sLoc.Declare(String)
+
+	F.Intrinsic.Control.If(V.Screen.F_WO!optView.Value,=,True)
+		F.Intrinsic.Control.If(V.Args.Column,=,"JOB","OR",V.Args.Column,=,"SUFFIX")
+			F.Intrinsic.Control.CallSub(lockscreen)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",2,V.Args.RowIndex,V.Local.sJob)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",3,V.Args.RowIndex,V.Local.sSuffix)
+			F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A",V.Local.sJob,V.Local.sSuffix,V.Local.sParams)
+			F.Global.General.CallWrapperSync(450000,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+			
+		F.Intrinsic.Control.ElseIf(V.Args.COLUMN,=,"PART","OR",V.Args.COLUMN,=,"LOCATION")
+			F.Intrinsic.Control.CallSub(lockscreen)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",5,V.Args.RowIndex,V.Local.sPart)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",6,V.Args.RowIndex,V.Local.sLoc)
+			F.Intrinsic.String.Build("{0}!*!{1}!*!O",V.Local.sPart,V.Local.sLoc,V.Local.sParams)
+			F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+			
+		F.Intrinsic.Control.ElseIf(V.Args.COLUMN,=,"PRINTED")
+			Gui.F_WO.GsGCWO.SetCellValue("gvWOs",0,V.Args.RowIndex,True)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",2,V.Args.RowIndex,V.Local.sJob)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",3,V.Args.RowIndex,V.Local.sSuffix)
+			F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sJob,V.Local.sSuffix,"1811",V.Local.sParams)
+			F.Global.General.CallWrapperSync(900100,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Args.Column,=,"JOB","OR",V.Args.Column,=,"SUFFIX")
+			F.Intrinsic.Control.CallSub(lockscreen)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",2,V.Args.RowIndex,V.Local.sJob)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",3,V.Args.RowIndex,V.Local.sSuffix)
+			F.Intrinsic.String.Build("{0}!*!{1}!*!O",V.Local.sJob,V.Local.sSuffix,V.Local.sParams)
+			F.Global.General.CallWrapperSync(2009,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+			
+		F.Intrinsic.Control.ElseIf(V.Args.COLUMN,=,"PART","OR",V.Args.COLUMN,=,"LOCATION")
+			F.Intrinsic.Control.CallSub(lockscreen)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",5,V.Args.RowIndex,V.Local.sPart)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",6,V.Args.RowIndex,V.Local.sLoc)
+			F.Intrinsic.String.Build("{0}!*!{1}!*!M",V.Local.sPart,V.Local.sLoc,V.Local.sParams)
+			F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+			
+		F.Intrinsic.Control.ElseIf(V.Args.COLUMN,=,"PRINTED")
+			Gui.F_WO.GsGCWO.SetCellValue("gvWOs",0,V.Args.RowIndex,True)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",2,V.Args.RowIndex,V.Local.sJob)
+			Gui.F_WO.GsGCWO.GetCellValue("gvWOs",3,V.Args.RowIndex,V.Local.sSuffix)
+			F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sJob,V.Local.sSuffix,"1811",V.Local.sParams)
+			F.Global.General.CallWrapperSync(900100,V.Local.sParams)
+			Gui.F_WO.GsGCWO.Enabled(True)
+			F.Intrinsic.Control.CallSub(enablescreen)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+		
+F.Intrinsic.Control.Label("GsGCWO_RowCellClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+
+Program.Sub.GsGCWO_RowCellClick.End
+
+Program.Sub.GsGCWO_CellValueChanged.Start
+F.Intrinsic.Control.SetErrorHandler("GsGCWO_CellValueChanged_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	V.Local.sSQL.Declare(String)
+	V.Local.sJS.Declare(String)
+	V.Local.sJob.Declare(String)
+	V.Local.sSuffix.Declare(String)
+	V.Local.sParams.Declare(String)
+	V.Local.sText.Declare
+
+	F.Intrinsic.Control.If(V.Args.COLUMN,=,"NOTES")
+		Gui.F_WO.GsGCWO.GetCellValue("gvWOs",1,V.Args.RowIndex,V.Local.sJob)
+		Gui.F_WO.GsGCWO.GetCellValue("gvWOs",2,V.Args.RowIndex,V.Local.sSuffix)
+		F.Intrinsic.String.Replace(V.Args.Value,"'","''",V.Local.sText)
+		F.Intrinsic.String.Build("SELECT * FROM GAB_4169_WO_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+			F.Intrinsic.String.Build("INSERT INTO GAB_4169_WO_NOTES(JOB,SUFFIX,NOTES) VALUES('{0}','{1}','{2}');",V.Local.sJob,V.Local.sSuffix,V.Local.sText,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("DELETE FROM GAB_4169_WO_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.String.Build("INSERT INTO GAB_4169_WO_NOTES(JOB,SUFFIX,NOTES) VALUES('{0}','{1}','{2}');",V.Local.sJob,V.Local.sSuffix,V.Local.sText,V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstNotes.Close
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("GsGCWO_CellValueChanged_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.GsGCWO_CellValueChanged.End
+
+Program.Sub.GsGCWO_ColumnFilterChanged.Start
+F.Intrinsic.Control.SetErrorHandler("GsGCWO_ColumnFilterChanged_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+
+	V.Local.bFilter.Declare	
+	V.Local.sFilter.Declare
+	V.Local.sInvalid.Declare
+	V.Local.bRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.iCounter.Declare(Long,0)
+	V.Local.sMsg.Declare
+
+	F.Intrinsic.String.Split("StartsWith*!*Between*!*Contains*!*EndsWith*!*IsNullOrEmpty*!*?*!*IsOutlookInterval","*!*",V.Local.sInvalid)
+	F.Intrinsic.String.IsNullOrWhiteSpace(V.Args.ActiveFilterExpression,V.Local.bFilter)
+	Function.Intrinsic.Control.If(V.Local.bFilter,=,True)
+		F.Intrinsic.Control.CallSub(loadtotals,"Filter","JOB LIKE '%%'")
+	Function.Intrinsic.Control.Else
+		F.Intrinsic.String.Replace(V.Args.ActiveFilterExpression,"[","",V.Local.sFilter)
+		F.Intrinsic.String.Replace(V.Local.sFilter,"]","",V.Local.sFilter)
+
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sInvalid.UBound,1)
+			F.Intrinsic.String.IsInString(V.Local.sFilter,V.Local.sInvalid(V.Local.iCnt),False,V.Local.bRet)
+			F.Intrinsic.Control.If(V.Local.bRet,=,True)
+				F.Intrinsic.Math.Add(V.Local.iCounter,1,V.Local.iCounter)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+
+		F.Intrinsic.Control.If(V.Local.iCounter,=,1)
+			Function.Intrinsic.String.Build("Grid will be filtered, but totals will not be recalculated, because one of the filters entered is an invalid filter for recalculating totals.{0}{0}Invalid Filters for recalculating totals:{0}- Is between{0}- Is not between{0}- Contains{0}- Does not contain{0}- Beings with{0}- Ends with{0}- Is blank{0}- Is not blank{0}- ?{0}- Calendar Checkboxes",V.Ambient.NewLine,V.Local.sMsg)
+			Function.Intrinsic.UI.Msgbox(V.Local.sMsg,"Filter Validation")
+		F.Intrinsic.Control.ElseIf(V.Local.iCounter,>,1)
+			Function.Intrinsic.String.Build("Grid will be filtered, but totals will not be recalculated, because more than one filter entered is an invalid filter for recalculating totals.{0}{0}Invalid Filters for recalculating totals:{0}- Is between{0}- Is not between{0}- Contains{0}- Does not contain{0}- Beings with{0}- Ends with{0}- Is blank{0}- Is not blank{0}- ?{0}- Calendar Checkboxes",V.Ambient.NewLine,V.Local.sMsg)
+			Function.Intrinsic.UI.Msgbox(V.Local.sMsg,"Filter Validation")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(loadtotals,"Filter",V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("GsGCWO_ColumnFilterChanged_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.GsGCWO_ColumnFilterChanged.End
+
+Program.Sub.SetAnchors.Start
+F.Intrinsic.Control.SetErrorHandler("SetAnchors_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+	
+	Gui.F_WO.picGSSLogo.Anchor(1)
+	Gui.F_WO.GsGCWO.Anchor(15)
+	Gui.F_WO.frameButtons.Anchor(9)
+	Gui.F_WO.framePermissions.Anchor(9)
+	Gui.F_WO.frameFilters.Anchor(6)
+	Gui.F_WO.frameTot.Anchor(10)
+	Gui.F_WO.progressBarStatus.Anchor(5)
+	Gui.F_WO.lblStatus.Anchor(5)
+	
+F.Intrinsic.Control.Label("SetAnchors_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.SetAnchors.End
+
+Program.Sub.F_WO_Resize.Start
+F.Intrinsic.Control.SetErrorHandler("F_WO_Resize_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	'Let Form grow larger than 15375, but not lower
+	F.Intrinsic.Control.If(V.Screen.F_WO.Width,<,15375)
+		Gui.F_WO..Size(15375,V.Screen.F_WO.Height)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("F_WO_Resize_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.F_WO_Resize.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdRefresh_Click_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	
+	Gui.F_WO.chkCust.Value(0)
+	Gui.F_WO.chkLoc.Value(0)
+	Gui.F_WO.chkPL.Value(0)
+	Gui.F_WO.chkWC.Value(0)
+	Gui.F_WO.txtCust.Text("")
+	Gui.F_WO.txtLoc.Text("")
+	Gui.F_WO.txtPL.Text("")
+	Gui.F_WO.txtWC.Text("")
+	Gui.F_WO.GsGCWO.Visible(False)
+	Gui.F_WO.GsGCWO.ClearRows("gvWOs")
+	F.Intrinsic.Control.CallSub(lockscreen)
+	F.Intrinsic.Control.CallSub(loaddtdvwos)
+	F.Intrinsic.Control.CallSub(loadgvwos)
+	F.Intrinsic.Control.CallSub(loadtotals,"Filter","JOB LIKE '%%'")
+	F.Intrinsic.Control.CallSub(enablescreen)
+	
+F.Intrinsic.Control.Label("cmdRefresh_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf			
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.cmdCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+	v.Local.serror.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_WO.txtCust.Text(V.Local.sRet(1))
+		Gui.F_WO.chkCust.Value(1)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("cmdCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.cmdCust_Click.End
+
+Program.Sub.cmdLoc_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdLoc_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.sTitles.Declare(String)
+	V.Local.iWidths.Declare(Long)
+	V.Local.sRet.Declare(String)
+	
+	F.Intrinsic.String.Split("Location*!*Description","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("1300*!*2300","*!*",V.Local.iWidths)
+	
+	F.Intrinsic.UI.MiniBrowser("Select a Location","con","Select Location,Location_desc FROM V_LOCATIONS ORDER BY Location",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_WO.txtLoc.Text(V.Local.sRet(0))
+		Gui.F_WO.chkLoc.Value(1)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("cmdLoc_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.cmdLoc_Click.End
+
+Program.Sub.cmdPL_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPL_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	Function.Intrinsic.UI.Browser(130,"",Variable.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_WO.txtPL.Text(V.Local.sRet(0))
+		Gui.F_WO.chkPL.Value(1)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("cmdPL_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+
+Program.Sub.cmdPL_Click.End
+
+Program.Sub.cmdWC_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdWC_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	Function.Intrinsic.UI.Browser(400,"",Variable.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_WO.txtWC.Text(V.Local.sRet(0))
+		Gui.F_WO.chkWC.Value(1)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("cmdWC_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.cmdWC_Click.End
+
+Program.Sub.cmdFilter_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdFilter_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.iFilter.Declare(Long,0)
+	V.Local.sFilter.Declare(String)
+	
+	Gui.F_WO.lblStatus.Visible(True)
+	Gui.F_WO.lblStatus.Caption("Setting Filter(s)....")
+	Gui.F_WO.progressBarStatus.Visible(True)
+	Gui.F_WO.progressBarStatus.Min(0)
+	Gui.F_WO.progressBarStatus.Max(100)
+	Gui.F_WO.progressBarStatus.Value(20)
+	
+	F.Intrinsic.Control.If(V.DataView.dtWOs!dvWOs.Exists)
+		F.Data.DataView.Close("dtWOs","dvWOs")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.F_WO!chkCust.Value,=,1)
+		F.Intrinsic.Math.Add(V.Local.iFilter,1,V.Local.iFilter)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.F_WO!chkLoc.Value,=,1)
+		F.Intrinsic.Math.Add(V.Local.iFilter,2,V.Local.iFilter)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.F_WO!chkPL.Value,=,1)
+		F.Intrinsic.Math.Add(V.Local.iFilter,4,V.Local.iFilter)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.F_WO!chkWC.Value,=,1)
+		F.Intrinsic.Math.Add(V.Local.iFilter,8,V.Local.iFilter)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.F_WO.progressBarStatus.Value(40)
+	F.Intrinsic.Control.If(V.Local.iFilter,<>,0)
+		F.Intrinsic.Control.CallSub(lockscreen)
+		F.Intrinsic.Control.SelectCase(V.Local.iFilter)
+			F.Intrinsic.Control.Case(1)
+				'NAME_CUSTOMER
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}'",V.Screen.F_WO!txtCust.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(2)
+				'LOCATION
+				F.Intrinsic.String.Build("LOCATION = '{0}'",V.Screen.F_WO!txtLoc.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(3)
+				'NAME_CUSTOMER & LOCATION
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND LOCATION = '{1}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtLoc.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(4)
+				'PRODUCT_LINE
+				F.Intrinsic.String.Build("PRODUCT_LINE = '{0}'",V.Screen.F_WO!txtPL.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(5)
+				'NAME_CUSTOMER & PRODUCT_LINE
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND PRODUCT_LINE = '{1}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtPL.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(6)
+				'LOCATION & PRODUCT_LINE
+				F.Intrinsic.String.Build("LOCATION = '{0}' AND PRODUCT_LINE = '{1}'",V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtPL.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(7)
+				'NAME_CUSTOMER, LOCATION & PRODUCT_LINE
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND LOCATION = '{1}' AND PRODUCT_LINE = '{2}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtPL.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(8)
+				'OPER
+				F.Intrinsic.String.Build("OPER = '{0}'",V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(9)
+				'NAME_CUSTOMER & OPER
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND OPER = '{1}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(10)
+				'LOCATION & OPER
+				F.Intrinsic.String.Build("LOCATION = '{0}' AND OPER = '{1}'",V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(11)
+				'NAME_CUSTOMER, LOCATION & OPER
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND LOCATION = '{1}' AND OPER = '{3}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(12)
+				'PRODUCT_LINE & OPER
+				F.Intrinsic.String.Build("PRODUCT_LINE = '{0}' AND OPER = '{1}'",V.Screen.F_WO!txtPL.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(13)
+				'NAME_CUSTOMER, PRODUCT_LINE & OPER
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND PRODUCT_LINE = '{2}' AND OPER = '{3}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtPL.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(14)
+				'LOCATION, PRODUCT_LINE & OPER
+				F.Intrinsic.String.Build("LOCATION = '{0}' AND PRODUCT_LINE = '{1}' AND OPER = '{2}'",V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtPL.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+			F.Intrinsic.Control.Case(15)
+				'NAME_CUSTOMER, LOCATION, PRODUCT_LINE & OPER
+				F.Intrinsic.String.Build("NAME_CUSTOMER = '{0}' AND LOCATION = '{1}' AND PRODUCT_LINE = '{2}' AND OPER = '{3}'",V.Screen.F_WO!txtCust.Text,V.Screen.F_WO!txtLoc.Text,V.Screen.F_WO!txtPL.Text,V.Screen.F_WO!txtWC.Text,V.Local.sFilter)
+				F.Data.DataView.Create("dtWOs","dvWOs",22,V.Local.sFilter,"DATE_DUE ASC,JOB ASC,SUFFIX ASC")
+		F.Intrinsic.Control.EndSelect
+		Gui.F_WO.progressBarStatus.Value(60)
+		F.Intrinsic.Control.CallSub(loadgvwos)
+		Gui.F_WO.progressBarStatus.Value(80)
+		F.Intrinsic.Control.CallSub(loadtotals,"Filter",V.Local.sFilter)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(enablescreen)
+	Gui.F_WO.progressBarStatus.Value(100)
+	
+F.Intrinsic.Control.Label("cmdFilter_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+	
+Program.Sub.cmdFilter_Click.End
+
+Program.Sub.LockScreen.Start
+F.Intrinsic.Control.SetErrorHandler("LockScreen_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+
+	Gui.F_WO.GsGCWO.Visible(False)
+	Gui.F_WO.frameButtons.Enabled(False)
+	Gui.F_WO.framePermissions.Enabled(False)
+	Gui.F_WO.frameFilters.Enabled(False)
+	Gui.F_WO.frameTot.Enabled(False)
+	
+F.Intrinsic.Control.Label("LockScreen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.LockScreen.End
+
+Program.Sub.EnableScreen.Start
+F.Intrinsic.Control.SetErrorHandler("EnableScreen_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	
+	Gui.F_WO.frameButtons.Enabled(True)
+	Gui.F_WO.framePermissions.Enabled(True)
+	Gui.F_WO.frameFilters.Enabled(True)
+	Gui.F_WO.frameTot.Enabled(True)
+	Gui.F_WO.GsGCWO.Visible(True)
+	Gui.F_WO.lblStatus.Visible(False)
+	Gui.F_WO.progressBarStatus.Visible(False)
+	
+F.Intrinsic.Control.Label("EnableScreen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.EnableScreen.End
+
+Program.Sub.LoadTotals.Start
+F.Intrinsic.Control.SetErrorHandler("LoadTotals_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	
+	V.Local.fEstHrs.Declare(Float)
+	V.Local.sEstHrs.Declare(String)
+	V.Local.fActHrs.Declare(Float)
+	V.Local.sActHrs.Declare(String)
+	V.Local.fRemHrs.Declare(Float)
+	V.Local.sRemHrs.Declare(String)
+
+	F.Data.DataTable.Compute("dtWOs","SUM(EST_HRS)",V.Args.Filter,V.Local.fEstHrs)
+	F.Data.DataTable.Compute("dtWOs","SUM(ACT_HRS)",V.Args.Filter,V.Local.fActHrs)
+	F.Data.DataTable.Compute("dtWOs","SUM(REM_HRS)",V.Args.Filter,V.Local.fRemHrs)
+	
+	F.Intrinsic.String.Format(V.Local.fEstHrs,"#,###,###,##0.0000",V.Local.sEstHrs)
+	Gui.F_WO.txtEstHrs.Text(V.Local.sEstHrs)
+	F.Intrinsic.String.Format(V.Local.fActHrs,"#,###,###,##0.0000",V.Local.sActHrs)
+	Gui.F_WO.txtActHrs.Text(V.Local.sActHrs)
+	F.Intrinsic.String.Format(V.Local.fRemHrs,"#,###,###,##0.0000",V.Local.sRemHrs)
+	Gui.F_WO.txtRemHrs.Text(V.Local.sRemHrs)
+	
+F.Intrinsic.Control.Label("LoadTotals_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.LoadTotals.End
+
+Program.Sub.CheckTable.Start
+F.Intrinsic.Control.SetErrorHandler("CheckTable_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.bExists.Declare(Boolean)
+	
+	Gui.F_WO.lblStatus.Caption("Checking Database Table....")
+	
+	F.ODBC.Connection!con.TableExists("GAB_4169_WO_NOTES",V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		F.ODBC.Connection!con.Execute("CREATE TABLE GAB_4169_WO_NOTES(JOB CHAR(6),SUFFIX CHAR(3),NOTES LONGVARCHAR);")
+		F.ODBC.Connection!con.Execute("CREATE INDEX GAB_4169_WO_NOTES01 USING 1 ON GAB_4169_WO_NOTES(JOB);")
+		F.ODBC.Connection!con.Execute("CREATE INDEX GAB_4169_WO_NOTES02 USING 2 ON GAB_4169_WO_NOTES(SUFFIX);")
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Label("CheckTable_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf	
+Program.Sub.CheckTable.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdExport_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+			F.Intrinsic.String.Build("{0}\GAB_4166_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.F_WO.GsGCWO.Export(V.Local.sFileExport,"xlsx")
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}\GAB_4166_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.F_WO.GsGCWO.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+F.Intrinsic.Control.Label("cmdExport_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.picGSSLogo_DblClick.Start
+F.Intrinsic.Control.SetErrorHandler("picGSSLogo_DblClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	
+	Gui.frmWeb..Show
+F.Intrinsic.Control.Label("picGSSLogo_DblClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+Program.Sub.picGSSLogo_DblClick.End
+
+Program.Sub.frmWeb_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("frmWeb_Unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	Gui.frmWeb..Visible(False)
+
+F.Intrinsic.Control.Label("frmWeb_Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf		
+	
+Program.Sub.frmWeb_UnLoad.End
+
+Program.Sub.cmdGSS_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdGSS_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	F.Intrinsic.Task.ShellExec(0,"Open","http://www.globalshopsolutions.com/","","",0)
+	
+F.Intrinsic.Control.Label("cmdGSS_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf			
+Program.Sub.cmdGSS_Click.End
+
+Program.Sub.cmdServ_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdServ_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-service.com/","","",0)
+	
+F.Intrinsic.Control.Label("cmdServ_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf			
+Program.Sub.cmdServ_Click.End
+
+Program.Sub.cmdUpd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdUpd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+	v.Local.serror.Declare(String)
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-updates.com/","","",0)
+	
+F.Intrinsic.Control.Label("cmd_Upd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4692_SF_OpenJobReview_BBmach.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(form_unload)
+Function.Intrinsic.Control.EndIf			
+Program.Sub.cmdUpd_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_4166_SF_OpenJobReview_BBmach$}$AGV$}$06/02/2016 8:34:18 AM$}$False
+Program.Sub.Comments.End
